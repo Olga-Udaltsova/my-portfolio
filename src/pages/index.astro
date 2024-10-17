@@ -7,19 +7,15 @@ import Contacts from "../components/Contacts.astro";
 import Footer from "../components/Footer.astro";
 import MyFoto from "../images/my-foto.jpg";
 import Styles from "../styles/style.module.sass";
-import { Image } from "astro:assets";
 ---
 
 <Layout title="Добро пожаловать!">
   <Header />
   <main class={Styles.container} id="home">
-    <div class={Styles.My_info}>
-      <h1 class={Styles.My_info_header}>
+      <h1 class={Styles.header}>
         Привет, Я Ольга, <br />
         <span>Frontend-разработчик</span>
       </h1>
-      <Image src={MyFoto} alt="my-foto" class={Styles.My_info_myFoto} />
-    </div>
     <About />
     <Projects />
     <Contacts />
