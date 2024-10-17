@@ -1,0 +1,44 @@
+---
+import Tag from "../components/ui/Tag/Tag.astro";
+import Styles from "../styles/style.module.sass";
+
+const tags = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Redux",
+  "Astro",
+  "Next.js",
+  "Less",
+  "Sass",
+  "Tailwind CSS",
+  "Styled Component",
+  "Material UI",
+  "Node.js",
+  "Jest",
+  "Git",
+  "Figma",
+  "Youtrack",
+];
+---
+
+<div id="about">
+  <div class={Styles.title}>
+    <h2>Обо мне</h2><span class={Styles.line}></span>
+  </div>
+  <div>
+    <p class={Styles.text}>
+      Я junior frontend-разработчик из Санкт-Петербурга. Владею HTML, CSS,
+      JavaScript, TypeScript, а также библиотекой React. Обладаю практическими
+      навыками Figma. Люблю создавать красивые, удобные и функциональные сайты.
+      <br />Я стремлюсь стать профессионалом в области веб-разработки. Готова
+      учиться чему-то новому, изучать новые технологии и совершенствовать свои
+      навыки в интересных проектах.
+    </p>
+    <div class={Styles.tags}>
+      {tags.map((tag) => <Tag tag={tag} />)}
+    </div>
+  </div>
+</div>

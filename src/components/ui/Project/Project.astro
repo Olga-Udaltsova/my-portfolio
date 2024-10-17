@@ -1,0 +1,17 @@
+---
+import { Image } from "astro:assets";
+import Styles from "../../../styles/style.module.sass";
+
+const { item } = Astro.props;
+---
+
+<div class={Styles.project}>
+  <Image src={item.image} alt="Picture_project" class={Styles.project_image} />
+  <div class={Styles.project_text}>
+    <p class={Styles.project_text_title}>{item.name}</p>
+    <p class={Styles.project_text_description}>{item.description}</p>
+    <p class={Styles.project_text_link}>
+      <a href={item.link} target="_blank">Ссылка на GitHub</a>
+    </p>
+  </div>
+</div>

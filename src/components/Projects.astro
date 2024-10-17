@@ -1,0 +1,77 @@
+---
+import type { ImageMetadata } from "astro";
+import Project from "./ui/Project/Project.astro";
+import Styles from "../styles/style.module.sass";
+
+import ImagePortfo from "../images/portfolio.png";
+import ImageQuicklink from "../images/quicklink.png";
+import ImagePosts from "../images/posts.png";
+import ImageShop from "../images/shop.png";
+import ImageNetWork from "../images/socialNetWork.png";
+import ImageCookies from "../images/cookies.png";
+
+type project = {
+  id: number;
+  name: string;
+  description: string;
+  image: ImageMetadata;
+  link: string;
+};
+
+const projects: project[] = [
+  {
+    id: 1,
+    name: "Сайт-визитка",
+    description: "Простенький лендинг 'Портфолио' на HTML и CSS.",
+    image: ImagePortfo,
+    link: "https://github.com/Olga-Udaltsova/Profile",
+  },
+  {
+    id: 2,
+    name: "Quicklink",
+    description: "Лендинг сервиса по размещению и продвижению своего профиля.",
+    image: ImageQuicklink,
+    link: "https://github.com/Olga-Udaltsova/Quicklink",
+  },
+  {
+    id: 3,
+    name: "Сайт по работе с постами",
+    description:
+      "На сайте можно писать, сортировать, редактировать и удалять посты.",
+    image: ImagePosts,
+    link: "https://github.com/Olga-Udaltsova/posts",
+  },
+  {
+    id: 4,
+    name: "Онлайн магазин",
+    description:
+      "Сайт по продаже одежды. На сайте реализован поиск, сортировка и выбор по параметрам товаров, добавление товаров в корзину и избранное, и подсчет общей стоимости заказа.",
+    image: ImageShop,
+    link: "https://github.com/Olga-Udaltsova/shop",
+  },
+  {
+    id: 5,
+    name: "Социальная сеть",
+    description:
+      "Сайт представляет собой социальную сеть, где люди могут выкладывать свои посты и читать чужие посты, писать комментарии и добавлять других пользователей к себе в друзья.",
+    image: ImageNetWork,
+    link: "https://github.com/Olga-Udaltsova/social_network",
+  },
+  {
+    id: 6,
+    name: "Сайт пекарни Cookies",
+    description: "Одностраничный сайт по заказу печенья.",
+    image: ImageCookies,
+    link: "https://github.com/Olga-Udaltsova/cookies",
+  },
+];
+---
+
+<div id="projects">
+  <div class={Styles.title}>
+    <h2>Проекты</h2><span class={Styles.line}></span>
+  </div>
+  <div class={Styles.projects}>
+    {projects.map((project) => <Project key={project.id} item={project} />)}
+  </div>
+</div>
